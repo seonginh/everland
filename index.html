@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#banner_box>p>img').click(function(){
+				$('#banner').slideUp()
+			})
+			$('#banner_box>p>input').click(function(){
+				$('#banner').slideUp()
+			})
+		})
+	</script>
+	<style>
+		*{margin: 0; padding: 0; list-style: none;}
+		header {width: 100%; height: 147px;}
+		#header1 {width: 100%; height: 39px; margin: auto; background-color: #f6f6f6; border-bottom: 1px solid #c5c5c5; border-top: 1px solid #c5c5c5; box-sizing: border-box;}
+		#header1_box {width: 960px; height: 39px; margin: auto; cursor: pointer;}
+		#header1_box>li {float: left; line-height: 39px; text-align: center; font-size: 14px; font-weight: 900; color: #666;}
+		#header1_box>li:nth-child(2) {width: 120px; height: 38px; background-color: #fff; border-left: 1px solid #c5c5c5; margin-left: 20px;}
+		#header1_box>li:nth-child(3) {width: 120px; height: 38px; border-left: 1px solid #c5c5c5;}
+		#header1_box>li:nth-child(4) {width: 95px; height: 38px; border-left: 1px solid #c5c5c5;}
+		#main_img>img {height: 36px;}
+		#select_box {width: 166px; height: 38px; border-left: 1px solid #c5c5c5; cursor: pointer;}
+		#select_box>img {vertical-align: middle;}
+		#select_box>select {width: 100px; height: 20px; border: none; background-color: #f6f6f6; text-align: center; cursor: pointer;}
+		#header1_box>li:nth-child(6) {width: 99px; height: 38px; background-color: #ff7f02; color: #fff; font-size: 12px;}
+		#header1_box>li:nth-child(7) {width: 99px; height: 38px; background-color: #2dbdca; color: #fff; font-size: 12px;}
+		#header1_box>li:nth-child(8) {width: 99px; height: 38px; background-color: #892fd5; color: #fff; font-size: 12px;}
+		#header2 {width: 100%; height: 68px; border-bottom: 2px solid #ff7126;}
+		#header2_box {width: 960px; height: 68px; margin: auto; position: relative; text-align: center;}
+		#input_box {width: 240px; height: 32px; border: 1px solid #dadada; position: absolute; top: 20px; left: 0; cursor: pointer;}
+		#input_box>input {width: 200px; height: 30px; position: absolute; left: 0; border: none;}
+		#input_box>img {height: 30px; position: absolute; right: 0; top: 0;}
+		#header2_box>h2 {display: inline-block; margin-top: 20px; font-weight: 400; color: #666; cursor: pointer;}
+		#login {width: 195px; height: 20px; float: right; margin-top: 20px; font-size: 12px; font-weight: 100; color: #666; cursor: pointer;}
+		#header3 {width: 100%; height: 42px; border-bottom: 1px solid #c5c5c5;}
+		#header3_box {width: 960px; height: 42px; margin: auto; text-align: center; position: relative;}
+		#header3_box>li {display: inline-block; font-size: 15px; line-height: 42px; margin: 0 40px; cursor: pointer;}
+		#header3_box>img {width: 25px; position: absolute; top: 8px; right: -30px; cursor: pointer;}
+		#slide {width: 100%; height: 570px; text-align: center; background: url(images/slide5_bg.jpg) center no-repeat; background-size: cover; margin-top: 5px; position: relative;}
+		#slide>img {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; cursor: pointer;}
+		#slide_bt {width: 300px; height: 20px;position: absolute; left: 0; right: 0; margin: auto; bottom: 20px;}
+		#slide_bt>li {width: 15px; height: 15px; border-radius: 20px; display: inline-block; background-color: #ffecec; vertical-align: middle; cursor: pointer;}
+		#slide_bt>li:nth-child(1) {width: 20px; height: 20px; background: url(icons/btn_slide_control.png);}
+		#slide_bt>li:nth-child(5) {background-color: #ff4c2b;}
+		#new {width: 100%; height: 925px;}
+		#new_box {width: 1000px; height: 925px; margin: auto;}
+		#corona {width: 1000px; height: 65px; background-color: #eeeeee; text-align: center; margin-top: 70px; overflow: hidden;}
+		#corona>h2 {color: #666; margin-top: 15px;}
+		#whats_new {text-align: center; margin-top: 50px;}
+		#whats_new>h3 {display: inline-block; font-size: 40px; vertical-align: middle; margin: 0 50px; font-weight: 900;}
+		.new_line {width: 329px; height: 1px; background-color: #000; display: inline-block; vertical-align: middle;}
+		#whats_new_box {width: 1000px; height: 610px; margin: auto; margin-top: 15px;}
+		#whats_new_box>h4 {text-align: center; font-weight: 100;}
+		#whats_new_box>li {width: 235px; height: 235px; float: left; margin-right: 20px; margin-top: 50px; text-align: center; cursor: pointer;}
+		#whats_new_box>li:nth-child(5) {margin-right: 0;}
+		#whats_new_box>li:nth-child(9) {margin-right: 0;}
+		#whats_new_box>li>div {width: 235px; height: 165px;}
+		#whats_new_box>li:nth-child(2)>div {background: url(images/new_product5.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(2)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(3)>div {background: url(images/new_product2.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(3)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(4)>div {background: url(images/new_product3.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(4)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(5)>div {background: url(images/new_product4.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(5)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(6)>div {background: url(images/ad.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(6)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(7)>div {background: url(images/new_product6.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(7)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(8)>div {background: url(images/new_product7.jpg) top no-repeat; background-size: 100%; transition: 0.5s;}
+		#whats_new_box>li:nth-child(8)>div:hover {background-size: 110%;}
+		#whats_new_box>li:nth-child(9)>div {background: url(images/new_product8.jpg) top no-repeat; background-size: 100%; transition: 0.5s; box-sizing: border-box;}
+		#whats_new_box>li:nth-child(9)>div:hover {background-size: 110%;}
+		#whats_new_box>li>p {font-size: 12px; color: #666; margin-top: 20px; font-weight: 900;}
+		#whats_new_box>li>h5 {font-size: 14px; color: #666; font-weight: 900; margin-top: 5px;}
+		#promotion {width: 100%; height: 540px; background-color: #f7f7f7;}
+		#promotion_box {width: 1000px; height: 540px; margin: auto; text-align: center; overflow: hidden;}
+		#promotion_box>h3 {font-size: 40px; font-weight: 900; margin-top: 50px;}
+		#promotion_box>h4 {margin-top: 10px; font-weight: 400;}
+		#promotion_list {width: 1000px; height: 230px; background-color: #fff; margin-top: 45px; border-right: 1px solid #e6e6e6; cursor: pointer;}
+		#promotion_list>li {width: 200px; height: 230px; border-right: 1px solid #e6e6e6; float: left; box-sizing: border-box;}
+		#promotion_list>li:last-child {border-right: none;}
+		#promotion_list>li>h5 {margin-top: 15px;}
+		#promotion_list>li>img {width: 62px; margin-top: 20px;}
+		#promotion_list>li>h3 {margin-top: 20px; font-size: 15px; font-weight: 900;}
+		#promotion_list>li>h4 {margin-top: 7px; font-size: 13px; color: #ff4c2b;}
+		#promotion_plus {width: 250px; height: 45px; margin: auto; margin-top: 25px; border: 1px solid #ff4c1c; background-color: #fff; border-radius: 100px; cursor: pointer;}
+		#promotion_plus>h4 {line-height: 45px; color: #666; font-size: 14px;}
+		#promotion_plus>h4>img {vertical-align: middle; margin-left: 10px; margin-top: -5px;}
+		#product {width: 100%; height: 490px; background: url(images/joy_bg.jpg) center no-repeat;}
+		#product_box {width: 1000px; height: 490px; margin: auto; overflow: hidden;}
+		#product_text {width: 1000px; height: 50px; text-align: center; margin-top: 100px;}
+		.product_line {width: 319px; height: 1px; background-color: #b17b8c; display: inline-block; vertical-align: middle;}
+		#product_text>h3 {display: inline-block; vertical-align: middle; font-size: 30px; margin: 0 17px; line-height: 50px; color: #f2376a;}
+		#product_text>h3>span {color: #02807d;}
+		#product_list {width: 1000px; height: 235px; margin-top: 40px; text-align: center;}
+		#product_list>li {width: 235px; height: 235px; margin-right: 20px; float: left; }
+		#product_list>li:last-child {margin-right: 0;}
+		#product_list>li>div {width: 235px; height: 165px; cursor: pointer;}
+		#product_list>li:nth-child(1)>div {background: url(images/joy1.jpg) top no-repeat; transition: 0.5s; background-size: 100%;}
+		#product_list>li:nth-child(1)>div:hover {background-size: 110%;}
+		#product_list>li:nth-child(2)>div {background: url(images/joy2.jpg) top no-repeat; transition: 0.5s; background-size: 100%;}
+		#product_list>li:nth-child(2)>div:hover {background-size: 110%;}
+		#product_list>li:nth-child(3)>div {background: url(images/joy3.jpg) top no-repeat; transition: 0.5s; background-size: 100%;}
+		#product_list>li:nth-child(3)>div:hover {background-size: 110%;}
+		#product_list>li:nth-child(4)>div {background: url(images/joy4.jpg) top no-repeat; transition: 0.5s; background-size: 100%;}
+		#product_list>li:nth-child(4)>div:hover {background-size: 110%;}
+		#product_list>li>p {font-size: 12px; color: #666; margin-top: 20px; font-weight: 900;}
+		#product_list>li>h5 {font-size: 14px; color: #666; font-weight: 900; margin-top: 5px;}
+		#information {width: 100%; height: 730px; background-color: #f4f3f0; text-align: center; overflow: hidden;}
+		#information>h3 {font-size: 40px; margin-top: 50px; font-weight: 900;}
+		#information>h4 {font-weight: 100; margin-top: 10px;}
+		#information_box {width: 1000px; height: 500px; margin: auto; margin-top: 40px;}
+		#news {width: 325px; height: 500px; border-top: 1px solid #ff6941; background-color: #fff; box-sizing: border-box; float: left;}
+		#news>h4 {margin-top: 25px; font-weight: 900; font-size: 25px;}
+		#news>h5 {margin-top: 5px;}
+		#news_text {width: 280px; height: 340px; margin: auto; margin-top: 40px;}
+		#news_text>li {width: 280px; line-height: 45px; text-align: left; font-size: 14px; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid #ececec; color: #666;}
+		#news_text>li:nth-child(1) {border-top: 1px solid #8c8c8c;}
+		#news_text>li:nth-child(7) {border-bottom: 1px solid #8c8c8c;;}
+		#today {width: 325px; height: 500px; border-top: 1px solid #ff6941; background-color: #fff; box-sizing: border-box; float: left; margin-left: 10px;}
+		#today>h4 {margin-top: 25px; font-size: 25px; font-weight: 900;}
+		#today>h5 {margin-top: 5px; font-size: 20px; font-weight: 100;}
+		#today_line {width: 280px; height: 1px; background-color: #ececec; margin: auto; margin-top: 31px;}
+		#today>h3 {margin-top: 20px;}
+		#today>h2 {font-size: 40px; color: #ff4c2b; font-weight: 900;}
+		#today_text {width: 280px; height: 180px; text-align: left; margin: auto; margin-top: 20px;}
+		#today_text>li>p {margin-left: 15px; color: #666; font-size: 14px; margin-top: 10px;}
+		#today_text>li>p>span {font-weight: 900;}
+		#today_text>li>p>img {vertical-align: top; margin: 0 10px;}
+		#today_text>li:nth-child(4)>p>img {vertical-align: middle;}
+		#today>button {width: 135px; height: 40px; display: inline-block; border-radius: 100px; margin-top: 10px; cursor: pointer;}
+		#button1 {border: 1px solid #ff4c2b; color: #ff4c2b; background-color: #fff; font-weight: 900;} 
+		#button2 {border: 1px solid #6a2c81; color: #6a2c81; background-color: #fff; font-weight: 900;}
+		#smart {width: 325px; height: 377px; float: right;}
+		#smart_text {width: 325px; height: 130px; background-color: #ff542a; text-align: center; overflow: hidden;}
+		#smart_text>h4 {font-size: 25px; letter-spacing: -3px; margin-top: 30px; color: #fff;}
+		#smart_text>p {font-size: 16px; margin-top: 5px; color: #fff;}
+		#smart_list {width: 325px; height: 247px;}
+		#smart_list>li {width: 162px; height: 82px; float: left; border: 1px solid #ececec; box-sizing: border-box; text-align: left; background-color: #fff; cursor: pointer;}
+		#smart_list>li>img {display: inline-block; vertical-align: middle; margin-top: 20px; margin-left: 15px;}
+		#smart_list>li>p {display: inline-block; text-align: left; vertical-align: middle; margin-top: 20px; margin-left: 5px; font-size: 14px;}
+		#car {width: 325px; height: 110px; background-color: #fff; float: right; margin-top: 13px; cursor: pointer;}
+		#car>img {float: left; margin-top: 20px; margin-left: 20px;}
+		#car_text {width: 220px; height: 110px; float: right;}
+		#car_text>p {text-align: left; margin-top: 30px; font-size: 13px; font-weight: 600;}
+		#car_text>h5 {text-align: left; font-size: 15px; font-weight: 600; margin-top: 5px;}
+		#car_text>h5>span {color: #7c3697;}
+		#clip {width: 100%; height: 1050px;}
+		#clip_box {width: 1000px; margin: auto; text-align: center; margin-top: 50px;}
+		#clip_box>h3 {display: inline-block; font-size: 40px; vertical-align: middle; margin: 0px 50px; font-weight: 900;}
+		.clip_line {width: 329px; height: 1px; background-color: #000; display: inline-block; vertical-align: middle;}
+		#clip_box>p {color: #666; margin-top: 10px; font-size: 18px;}
+		#clip_list {width: 1000px; height: 680px; margin-top: 30px;}
+		#clip_list>li {width: 220px; height: 290px; float: left; margin-right: 40px; margin-bottom: 80px;}
+		#clip_list>li:nth-child(4n) {margin-right: 0;}
+		.imgbox {width: 220px; height: 220px; border-radius: 500px; overflow: hidden; cursor: pointer;}
+		.imgbox>img {width: 220px; height: 220px; transition: 0.5s;}
+		.imgbox:hover>img {transform: scale(1.05);}
+		#clip_list>li>h5 {margin-top: 20px; font-weight: 600;}
+		#clip_list>li>h4 {margin-top: 5px; font-weight: 600;}
+		#clip_box>button {width: 220px; height: 50px; border-radius: 500px; background-color: #fff; border: 1px solid #000; font-size: 16px; cursor: pointer;}
+		#clip_box>button>span {font-weight: 900;}
+		footer {width: 100%; height: 190px;}
+		#footer1 {width: 100%; height: 45px; background-color: #e9e9e9; border-top: 1px solid #cfcfcf;}
+		#footer1_box {width: 1000px; height: 45px; margin: auto;}
+		#footer2 {width: 100%; height: 145px; background-color: #444b55;}
+		#sns_box {float: left;}
+		#sns_box>li {float: left;}
+		#footer_select_box {float: right; margin-top: 10px;}
+		#footer_select_box>select {float: left;}
+		#st1 {width: 137px; height: 28px; cursor: pointer; border: none; margin-right: 10px;}
+		#st2 {width: 187px; height: 28px; cursor: pointer; border: none;}
+		#banner {background-color: #fefad4;}
+		#banner_box {width: 960px; height: 103px; margin: auto; position: relative;}
+		#banner_box>p {position: absolute; right: 0; bottom: 10px; cursor: pointer; font-size: 12px; vertical-align: middle;}
+		#banner_box>p>img {vertical-align: middle;}
+		#banner_box>p>input {cursor: pointer;}
+		</style>
+</head>
+<body>
+	<div id="banner">
+		<div id="banner_box">
+			<img src="images/img_top_banner.jpg" alt="" id="banner_img">
+			<p><input type="checkbox" name="" id=""> 1일간 열지않음 <img src="icons/KakaoTalk_20220216_121510124.jpg" alt=""></p>
+		</div>
+	</div>
+    <header>
+		<div id="header1">
+			<ul id="header1_box">
+				<li id="main_img"><img src="icons/main_logo.jpg" alt=""></li>
+				<li>에버랜드</li>
+				<li>캐리비안 베이</li>
+				<li>홈브리지</li>
+				<li id="select_box">
+					<img src="icons/bull_earth.gif" alt="">
+					<select name="" id="">
+						<option value="">한국어</option>
+						<option value="">일본어</option>
+						<option value="">영어</option>
+					</select>
+				</li>
+				<li>스마트예약</li>
+				<li>학생단체예약</li>
+				<li>기업단체예약</li>
+			</ul>
+		</div>
+		<div id="header2">
+			<div id="header2_box">
+				<div id="input_box">
+					<input type="text" name="" id="">
+					<img src="icons/ico_smart_reservation_04_01.png" alt="">
+				</div>
+				<h2>에버랜드</h2>
+				<div id="login">
+					<h4>로그인 | 회원가입 | 손님상담센터</h4>
+				</div>
+			</div>
+		</div>
+		<div id="header3">
+			<ul id="header3_box">
+				<li>이용정보</li>
+				<li>할인&이벤트</li>
+				<li>즐길거리</li>
+				<li>멤버십</li>
+				<li>에버랜드 더 알아보기</li>
+				<img src="icons/logo_magicseed.png" alt="">
+			</ul>
+		</div>
+	</header>
+	<div id="slide">
+		<img src="images/slide5_txt.png" alt="">
+		<ul id="slide_bt">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div id="new">
+		<div id="new_box">
+			<div id="corona">
+				<h2>※ 코로나 바이러스 감염증-19 관련 이용 안내</h2>
+			</div>
+			<div id="whats_new">
+			<div class="new_line"></div>
+				<h3>What's New</h3>
+			<div class="new_line"></div>
+		</div>
+		<ul id="whats_new_box">
+			<h4>꿈과 환상의 나라로 어서오세요!</h4>
+			<li>
+				<div></div>
+				<p>아기 호랑이</p>
+				<h5>어흥 스쿨!</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>아름다운 나비와 함께</p>
+				<h5>미리 봄을 만나보세요</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>겨울방학 시즌권</p>
+				<h5>전격 론칭!</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>동물원 팬들 모여라!</p>
+				<h5>네이버 카페 '주토피아' 오픈</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>레니의 대모험!</p>
+				<h5>드래곤 성을 찾아서</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>마법으로 수놓은 밤하늘</p>
+				<h5>로맨스 인 더 스카이</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>서울대 멘토와 함께하는</p>
+				<h5>고교생활 멘토링 캠프</h5>
+			</li>
+			<li>
+				<div></div>
+				<p>내가 직접 만드는</p>
+				<h5>가든 LED 대형 스크린 컨텐츠</h5>
+			</li>
+		</ul>
+		</div>
+	</div>
+	<div id="promotion">
+		<div id="promotion_box">
+			<h3>Ticket Promotion</h3>
+			<h4>나에게 꼭 맞춘 알찬 할인 정보</h4>
+			<ul id="promotion_list">
+				<li>
+					<h5>할인정보</h5>
+					<img src="images/ticket_promotion1.png" alt="">
+					<h3>스마트예약</h3>
+					<h4>20,900원~</h4>
+				</li>
+				<li>
+					<h5>할인정보</h5>
+					<img src="images/ticket_promotion2.png" alt="">
+					<h3>BC카드</h3>
+					<h4>전회원 1+1 우대</h4>
+				</li>
+				<li>
+					<h5>할인정보</h5>
+					<img src="images/ticket_promotion3.png" alt="">
+					<h3>KT멤버십</h3>
+					<h4>현장우대</h4>
+				</li>
+				<li>
+					<h5>할인정보</h5>
+					<img src="images/ticket_promotion4.png" alt="">
+					<h3>2인/3인 세트권</h3>
+					<h4>56,000원~</h4>
+				</li>
+				<li>
+					<h5>할인정보</h5>
+					<img src="images/ticket_promotion5.png" alt="">
+					<h3>키즈패키지 2인권</h3>
+					<h4>46,000원~</h4>
+				</li>
+			</ul>
+			<div id="promotion_plus">
+				<h4>할인정보 자세히 보기<img src="icons/btn_arr_black.png" alt=""></h4>
+			</div>
+		</div>
+	</div>
+	<div id="product">
+		<div id="product_box">
+			<div id="product_text">
+			<div class="product_line"></div>
+			<h3>즐거움 가득~ <span>에버랜드</span></h3>
+			<div class="product_line"></div>
+		  </div>
+		  <ul id="product_list">
+			  <li>
+				  <div></div>
+				  <p>직접 줄서지 않고</p>
+				  <h5>스마트 줄서기</h5>
+			  </li>
+			  <li>
+				  <div></div>
+				  <p>편하고 여유있게</p>
+				  <h5>모바일 오더</h5>
+			  </li>
+			  <li>
+				  <div></div>
+				  <p>마음을 담아 선물하세요</p>
+				  <h5>모바일 기프트 카드</h5>
+			  </li>
+			  <li>
+				  <div></div>
+				  <p>무궁이태범이</p>
+				  <h5>카카오톡 이모티콘 출시</h5>
+			  </li>
+		  </ul>
+		</div>
+	</div>
+	<div id="information">
+		<h3>Information</h3>
+		<h4>지금 바로 생생한 현장 소식</h4>
+	<div id="information_box">
+		<div id="news">
+			<h4>NEWS & NOTICE</h4>
+			<h5>새로운 소식들</h5>
+			<ul id="news_text">
+			<li>• [공지] 코로나 바이러스 감염증-19 관련 안내</li>
+			<li>• [공지] 셔틀버스 지연운행 공지</li>
+			<li>• (와디즈 펀딩) 호랑이가 나타났다!</li>
+			<li>• 동물원 팬 커뮤니티 <주토피아> 네이버 카페 오픈!</li>
+			<li>• [공지] 어트랙션 동계운휴 안내</li>
+			<li>• 레니의 대모험 휴연 안내 (2/8~2/17)</li>
+			<li>• [공지] 연간이용권 리뉴얼 안내</li>
+		</ul>
+	</div>
+		<div id="today">
+			<h4>TODAY</h4>
+			<h5>오늘의 운영시간</h5>
+			<div id="today_line"></div>
+			<h3>02월 10일(목)</h3>
+			<h2>10:00 - 19:00</h2>
+			<ul id="today_text">
+				<li>
+					<p>15:30 <img src="icons/bg_performance_line.png" alt=""><span> 슈퍼윙스 애니멀 톡</span></p>
+				</li>
+				<li>
+					<p>16:30 <img src="icons/bg_performance_line.png" alt=""><span> 슈퍼윙스 애니멀 톡<v/span></p>
+				</li>
+				<li>
+					<p>18:30 <img src="icons/bg_performance_line.png" alt=""><span> 문라이트 포토 파티</span></p>
+				</li>
+				<li>
+					<p>18:40 <img src="icons/bg_performance_one.png" alt=""><span> 빛의 심포니</span></p>
+				</li>
+			</ul>
+			<button id="button1">공연시간 더 보기</button>
+			<button id="button2">어트랙션 운휴안내</button>
+		</div>
+		<div id="smart">
+			<div id="smart_text">
+				<h4>스마트예약</h4>
+				<p>방문 전에 미리 준비!</p>
+			</div>
+			<ul id="smart_list">
+				<li>
+					<img src="icons/ico_smart_reservation_01_01.png" alt="">
+					<p>이용권</p>
+				</li>
+				<li>
+					<img src="icons/ico_smart_reservation_02_01.png" alt="">
+					<p>연간이용권</p>
+				</li>
+				<li>
+					<img src="icons/ico_smart_reservation_03_01.png" alt="">
+					<p>레스토랑<br>테라스</p>
+				</li>
+				<li>
+					<img src="icons/ico_smart_reservation_04_01.png" alt="">
+					<p>체험<br>프로그램</p>
+				</li>
+				<li>
+					<img src="icons/ico_smart_reservation_05_01.png" alt="">
+					<p>발레파킹</p>
+				</li>
+				<li>
+					<img src="icons/ico_smart_reservation_06_01.png" alt="">
+					<p>스페셜<br>패키지</p>
+				</li>
+			</ul>
+		</div>
+		<div id="car">
+			<img src="icons/ico-traffic.png" alt="">
+			<div id="car_text">
+			<p>"우리집에서 에버랜드까지"</p> 
+			<h5><span>대중교통∙자가용</span> 이용방법</h5>
+		</div>
+		</div>
+	</div>
+	</div>
+	<div id="clip">
+		<div id="clip_box">
+			<div class="clip_line"></div>
+			<h3>Editor's clip</h3>
+			<div class="clip_line"></div>
+			<p>매일매일이 즐거워~ 에버랜드 이야기</p>
+			<ul id="clip_list">
+				<li>
+					<div class="imgbox"><img src="images/editor_clip1.jpg" alt=""></div>
+					<h5>500일 맞이한 푸바오</h5>
+					<h4>백신 맞는 아기판다!</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip2.jpg" alt=""></div>
+					<h5>우리집 식물</h5>
+					<h4>월동준비 TIP!</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip3.jpg" alt=""></div>
+					<h5>스스로 퇴근 성공?</h5>
+					<h4>푸바오는 사춘기</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip4.jpg" alt=""></div>
+					<h5>설원의 지휘자</h5>
+					<h4>한국호랑이의 멋</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip5.jpg" alt=""></div>
+					<h5>200만뷰 화제의 영상</h5>
+					<h4>T-Exp CAST 따라잡기</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip6.jpg" alt=""></div>
+					<h5>환상의 라이팅쇼</h5>
+					<h4>빛의 심포니</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip7.jpg" alt=""></div>
+					<h5>에버랜드에서 뭐 먹지?</h5>
+					<h4>겨울철 간식 소개</h4>
+				</li>
+				<li>
+					<div class="imgbox"><img src="images/editor_clip8.jpg" alt=""></div>
+					<h5>에버랜드가 전하는 응원</h5>
+					<h4>#덕분에챌린지 #국민덕분에</h4>
+				</li>
+			</ul>
+			<button><span>더 많은 꿀팁</span> 보러가기 <img src="icons/btn_arr_black.png" alt=""></button>
+		</div>
+	</div>
+	<footer>
+		<div id="footer1">
+			<div id="footer1_box">
+				<ul id="sns_box">
+					<li><img src="icons/btn_sns_go01.gif" alt=""></li>
+					<li><img src="icons/btn_sns_go02.gif" alt=""></li>
+					<li><img src="icons/btn_sns_go03.gif" alt=""></li>
+					<li><img src="icons/btn_sns_go04.gif" alt=""></li>
+					<li><img src="icons/btn_sns_go05.gif" alt=""></li>
+					<li><img src="icons/btn_sns_go06.gif" alt=""></li>
+				</ul>
+				<div id="footer_select_box">
+					<select name="" id="st1">
+						<option value="">리조트 내 시설</option>
+						<option value="">교통박물관</option>
+						<option value="">호암미술관</option>
+						<option value="">글렌로스 골프클럽</option>
+					</select>
+					<select name="" id="st2">
+						<option value="">FAMILY SITE</option>
+						<option value="">삼성물산 리조트부문</option>
+						<option value="">골프삼성</option>
+						<option value="">My dog & SAMSUNG</option>
+						<option value="">서비스아카데미</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div id="footer2"></div>
+	</footer>
+</body>
+</html>
